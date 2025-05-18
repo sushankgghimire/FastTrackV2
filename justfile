@@ -5,6 +5,7 @@ set dotenv-load := true
 
 # bootstrap project
 @bootstrap *ARGS:
+    pre-commit install
     just env
     just build {{ ARGS }}
     just manage migrate
