@@ -28,7 +28,7 @@ jobs:
       - uses: hadolint/hadolint-action@v3.1.0
         with:
           dockerfile: Dockerfile
-  
+
   test:
     runs-on: "ubuntu-latest"
 
@@ -37,13 +37,13 @@ jobs:
 
       - name: Prepare environment
         run: cp --no-clobber .env.example .env && source .env
-      
+
       - name: Build Docker containers
         run: docker compose build
 
       - name: Start Docker containers
         run: docker compose up -d
-      
+
       - name: Run tests
         run: docker compose exec app pytest --ds=config.settings.test
 

@@ -49,7 +49,7 @@ set dotenv-load := true
 
 # copy .env.example to .env if not exists
 @env:
-    test -f .env || cp .env.example .env    
+    test -f .env || cp .env.example .env
 
 # run pre-commit processes
 @pre *ARGS:
