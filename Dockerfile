@@ -20,12 +20,15 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 COPY ./src /app/src
 COPY ./scripts /app/scripts
 
-RUN sed -i 's/\r$//g' /app/scripts/django & chmod +x /app/scripts/django
+RUN sed -i 's/\r$//g' /app/scripts/django
 
 FROM python:3.13-slim-bookworm
 
 # Copy the application from the builder
 COPY --from=builder /app /app
+
+# Ensure scripts are executable in the final image
+RUN chmod +x /app/scripts/django
 
 # Place executables in the environment at the front of the path
 ENV PATH="/app/.venv/bin:$PATH" \
