@@ -20,9 +20,8 @@ Including another URLconf
 from django.conf import settings
 from django.urls import include, path
 
-
 urlpatterns = [
-    path('api-auth/', include('rest_framework.urls')),
+    path("api-auth/", include("rest_framework.urls")),
 ]
 
 

@@ -20,8 +20,7 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 COPY ./src /app/src
 COPY ./scripts /app/scripts
 
-RUN sed -i 's/\r$//g' /app/scripts/django
-RUN chmod +x /app/scripts/django
+RUN sed -i 's/\r$//g' /app/scripts/django & chmod +x /app/scripts/django
 
 FROM python:3.13-slim-bookworm
 
