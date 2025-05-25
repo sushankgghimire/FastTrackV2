@@ -38,4 +38,4 @@ WORKDIR /app/src
 
 ARG DJANGO_DEBUG=false
 
-CMD ["granian", "--interface", "asgi", "config.asgi:application", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["granian", "--interface", "asgi", "config.asgi:application", "--host", "0.0.0.0", "--port", "8000", "--access-log", "--log"]

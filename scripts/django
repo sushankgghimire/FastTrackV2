@@ -6,4 +6,4 @@ set -o nounset
 
 
 python manage.py migrate
-exec granian --interface asginl config.asgi:application --host 0.0.0.0 --port 8000 --reload
+exec granian --interface asginl config.asgi:application --host 0.0.0.0 --port 8000 --reload --access-log
